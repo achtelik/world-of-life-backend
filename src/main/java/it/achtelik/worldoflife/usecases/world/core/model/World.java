@@ -1,4 +1,4 @@
-package it.achtelik.worldoflife.world.core.model;
+package it.achtelik.worldoflife.usecases.world.core.model;
 
 import java.util.HashMap;
 

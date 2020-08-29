@@ -1,4 +1,4 @@
-package it.achtelik.worldoflife.world.entrypoints.model;
+package it.achtelik.worldoflife.usecases.world.entrypoints.model;
 
 public class WorldCellDto {
     private final WorldPositionDto worldPositionDto;

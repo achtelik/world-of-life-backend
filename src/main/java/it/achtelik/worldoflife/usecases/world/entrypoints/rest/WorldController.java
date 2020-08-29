@@ -1,10 +1,11 @@
-package it.achtelik.worldoflife.world.entrypoints.rest;
+package it.achtelik.worldoflife.usecases.world.entrypoints.rest;
 
-import it.achtelik.worldoflife.world.core.WorldService;
-import it.achtelik.worldoflife.world.entrypoints.mapper.WorldDtoMapper;
-import it.achtelik.worldoflife.world.entrypoints.mapper.WorldPositionDtoMapper;
-import it.achtelik.worldoflife.world.entrypoints.model.WorldDto;
-import it.achtelik.worldoflife.world.entrypoints.model.WorldPositionDto;
+import it.achtelik.worldoflife.usecases.world.config.WorldProperties;
+import it.achtelik.worldoflife.usecases.world.core.WorldService;
+import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldDtoMapper;
+import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldPositionDtoMapper;
+import it.achtelik.worldoflife.usecases.world.entrypoints.model.WorldPositionDto;
+import it.achtelik.worldoflife.utils.JsonUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,12 +21,16 @@ public class WorldController {
     private final WorldDtoMapper worldDtoMapper;
     private final WorldPositionDtoMapper worldPositionDtoMapper;
     private final WorldService worldService;
+    private final WorldProperties worldProperties;
+    private final JsonUtils jsonUtils;
 
     public WorldController(WorldDtoMapper worldDtoMapper, WorldPositionDtoMapper worldPositionDtoMapper,
-                           WorldService worldService) {
+                           WorldService worldService, WorldProperties worldProperties, JsonUtils jsonUtils) {
         this.worldDtoMapper = worldDtoMapper;
         this.worldPositionDtoMapper = worldPositionDtoMapper;
         this.worldService = worldService;
+        this.worldProperties = worldProperties;
+        this.jsonUtils = jsonUtils;
     }
 
     @GetMapping("/test")
@@ -35,8 +40,9 @@ public class WorldController {
     }
 
     @GetMapping("/world")
-    Mono<WorldDto> getWorld() {
-        return Mono.justOrEmpty(worldDtoMapper.map(worldService.getWorld()));
+    Flux<String> getWorld() {
+        return Flux.interval(Duration.ZERO, worldProperties.getUpdateIntervalDuration())
+                .flatMap(aLong -> Flux.just(jsonUtils.toJson(worldDtoMapper.map(worldService.getWorld()))));
     }
 
     @PutMapping("/world")

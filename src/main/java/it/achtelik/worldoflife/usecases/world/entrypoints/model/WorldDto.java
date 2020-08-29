@@ -1,4 +1,4 @@
-package it.achtelik.worldoflife.world.entrypoints.model;
+package it.achtelik.worldoflife.usecases.world.entrypoints.model;
 
 import java.util.ArrayList;
 import java.util.Collection;

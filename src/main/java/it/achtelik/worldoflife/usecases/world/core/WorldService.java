@@ -1,7 +1,7 @@
-package it.achtelik.worldoflife.world.core;
+package it.achtelik.worldoflife.usecases.world.core;
 
-import it.achtelik.worldoflife.world.core.model.World;
-import it.achtelik.worldoflife.world.core.model.WorldPosition;
+import it.achtelik.worldoflife.usecases.world.core.model.World;
+import it.achtelik.worldoflife.usecases.world.core.model.WorldPosition;
 
 public class WorldService {
 

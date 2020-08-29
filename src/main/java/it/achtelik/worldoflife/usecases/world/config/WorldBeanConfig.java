@@ -1,9 +1,9 @@
-package it.achtelik.worldoflife.world.config;
+package it.achtelik.worldoflife.usecases.world.config;
 
-import it.achtelik.worldoflife.world.core.WorldService;
-import it.achtelik.worldoflife.world.entrypoints.mapper.WorldCellDtoMapper;
-import it.achtelik.worldoflife.world.entrypoints.mapper.WorldDtoMapper;
-import it.achtelik.worldoflife.world.entrypoints.mapper.WorldPositionDtoMapper;
+import it.achtelik.worldoflife.usecases.world.core.WorldService;
+import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldCellDtoMapper;
+import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldDtoMapper;
+import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldPositionDtoMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

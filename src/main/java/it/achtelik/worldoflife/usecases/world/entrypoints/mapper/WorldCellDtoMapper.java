@@ -1,7 +1,7 @@
-package it.achtelik.worldoflife.world.entrypoints.mapper;
+package it.achtelik.worldoflife.usecases.world.entrypoints.mapper;
 
-import it.achtelik.worldoflife.world.core.model.WorldCell;
-import it.achtelik.worldoflife.world.entrypoints.model.WorldCellDto;
+import it.achtelik.worldoflife.usecases.world.core.model.WorldCell;
+import it.achtelik.worldoflife.usecases.world.entrypoints.model.WorldCellDto;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

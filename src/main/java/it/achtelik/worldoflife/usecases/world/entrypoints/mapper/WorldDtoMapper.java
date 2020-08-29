@@ -1,7 +1,7 @@
-package it.achtelik.worldoflife.world.entrypoints.mapper;
+package it.achtelik.worldoflife.usecases.world.entrypoints.mapper;
 
-import it.achtelik.worldoflife.world.core.model.World;
-import it.achtelik.worldoflife.world.entrypoints.model.WorldDto;
+import it.achtelik.worldoflife.usecases.world.core.model.World;
+import it.achtelik.worldoflife.usecases.world.entrypoints.model.WorldDto;
 
 public class WorldDtoMapper {
 

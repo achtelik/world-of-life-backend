@@ -1,6 +1,6 @@
-package it.achtelik.worldoflife.world.entrypoints.scheduler;
+package it.achtelik.worldoflife.usecases.world.entrypoints.scheduler;
 
-import it.achtelik.worldoflife.world.core.WorldService;
+import it.achtelik.worldoflife.usecases.world.core.WorldService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;

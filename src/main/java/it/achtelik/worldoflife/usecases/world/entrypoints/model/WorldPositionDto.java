@@ -1,12 +1,12 @@
-package it.achtelik.worldoflife.world.core.model;
+package it.achtelik.worldoflife.usecases.world.entrypoints.model;
 
 import java.util.Objects;
 
-public class WorldPosition {
+public class WorldPositionDto {
     private final Integer x;
     private final Integer y;
 
-    public WorldPosition(Integer x, Integer y) {
+    public WorldPositionDto(Integer x, Integer y) {
         this.x = x;
         this.y = y;
     }
@@ -23,9 +23,9 @@ public class WorldPosition {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        WorldPosition that = (WorldPosition) o;
-        return Objects.equals(x, that.x) &&
-                Objects.equals(y, that.y);
+        WorldPositionDto that = (WorldPositionDto) o;
+        return x.equals(that.x) &&
+                y.equals(that.y);
     }
 
     @Override
