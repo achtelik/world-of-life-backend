@@ -1,9 +1,12 @@
 package it.achtelik.worldoflife.usecases.world.config;
 
 import it.achtelik.worldoflife.usecases.world.core.WorldService;
+import it.achtelik.worldoflife.usecases.world.core.iteration.WorldIteratorService;
+import it.achtelik.worldoflife.usecases.world.core.iteration.WorldPositionService;
 import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldCellDtoMapper;
 import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldDtoMapper;
 import it.achtelik.worldoflife.usecases.world.entrypoints.mapper.WorldPositionDtoMapper;
+import it.achtelik.worldoflife.utils.JsonUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -26,7 +29,17 @@ public class WorldBeanConfig {
     }
 
     @Bean
-    public WorldService getWorldService() {
-        return new WorldService();
+    public WorldPositionService getWorldPositionService() {
+        return new WorldPositionService();
+    }
+
+    @Bean
+    public WorldIteratorService getWorldIteratorService(WorldPositionService worldPositionService) {
+        return new WorldIteratorService(worldPositionService);
+    }
+
+    @Bean
+    public WorldService getWorldService(JsonUtils jsonUtils, WorldIteratorService worldIteratorService) {
+        return new WorldService(jsonUtils, worldIteratorService);
     }
 }

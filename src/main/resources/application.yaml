@@ -1,2 +1,6 @@
+server:
+  servlet.context-path: /api/backend
+spring:
+  webflux.base-path: /api/backend
 app:
   update-interval-duration: 5s

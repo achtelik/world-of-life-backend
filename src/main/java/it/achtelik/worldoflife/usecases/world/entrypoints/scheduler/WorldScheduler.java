@@ -17,9 +17,9 @@ public class WorldScheduler {
         this.worldService = worldService;
     }
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 300)
     public void calculateNewIteration() {
-        Boolean iterationResult = worldService.calculateNewIteration();
+        boolean iterationResult = worldService.calculateNewIteration();
         LOGGER.info(String.format("World iteration successfull=%s", iterationResult));
     }
 }

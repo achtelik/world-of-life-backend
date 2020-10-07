@@ -1,11 +1,14 @@
 package it.achtelik.worldoflife.usecases.world.entrypoints.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Objects;
 
 public class WorldPositionDto {
     private final Integer x;
     private final Integer y;
 
+    @JsonCreator
     public WorldPositionDto(Integer x, Integer y) {
         this.x = x;
         this.y = y;
